@@ -1,4 +1,4 @@
-<%= form_for(@classroom) do |f| %>
+<%= simple_form_for(@classroom) do |f| %>
   <% if @classroom.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@classroom.errors.count, "error") %> prohibited this classroom from being saved:</h2>
@@ -15,6 +15,7 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+    <%= f.association :teachers, as: :check_boxes %>
   <div class="actions">
     <%= f.submit %>
   </div>
