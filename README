@@ -2,7 +2,7 @@ Rails 3.1 _ids Bug
 
 When adding an association using `_ids = [association_ids]` for a has_many through relationship, ActiveRecord throws a
 RecordInvalid error if one of the association_id records does not validate.  When used with a nested form, the update action
-will not render the edit action when `.update_attributes` fails.
+will not render the edit action when `object.update_attributes` fails.
 
 Setup:
 1. Install the bundled gems and rake the database
